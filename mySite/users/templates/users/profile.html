@@ -1,18 +1,13 @@
 {% extends 'blog/base.html' %}
 
 {% block title %}
-  {{ title }}
+  Кабинет пользователя
 {% endblock %}
 
 {% block content %}
-  <h1>{{ title }}</h1>
-  <form method="post" class="form-register">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-outline-warning" type="submit">Зарегистрироваться</button>
-    <hr>
-    <p><a href="{% url 'user' %}">Вход</a></p>
-  </form>
+  <h1>Кабинет пользователя</h1>
+  <p>{{ user.username }}</p>
+  <p>{{ user.email }}</p>
 {% endblock %}
 
 

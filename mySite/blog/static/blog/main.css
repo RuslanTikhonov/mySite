@@ -20,6 +20,14 @@ body {
     font-weight: bold;
 }
 
+.form-register.auth input {
+    display: block;
+    width: 96%;
+    margin-top: 1px solid silver;
+    border-radius: 5px;
+    padding: 2%
+}
+
 footer {
   width: 70%;
   margin-left: 15%;

@@ -1,18 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block title %}
-  {{ title }}
+  Вы вышли с аккаунта
 {% endblock %}
 
 {% block content %}
-  <h1>{{ title }}</h1>
-  <form method="post" class="form-register">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-outline-warning" type="submit">Зарегистрироваться</button>
-    <hr>
-    <p><a href="{% url 'user' %}">Вход</a></p>
-  </form>
+  <h1>Вы вышли с аккаунта</h1>
+  <a href="{% url 'user' %}">Войти</a>
 {% endblock %}
 
 
