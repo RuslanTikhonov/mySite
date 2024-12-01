@@ -1,0 +1,40 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+
+        {% for post in news %}
+    <div class="alert alert-light">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.text }}</p>
+        <span class="test-muted"> Публикация: {{ post.date|date:"j F Y, время: H:i:s"}}</span>
+            {% if post.autor %}
+                <p>Автор: {{ post.autor }}, </p>
+            {% else %}
+                <p>Автор: <b>Admin</b>}</p>
+            {% endif %}
+    </div>
+    {% endfor %}
+{% endblock %}
+{% block aside_block %}
+<h3>Бокавая часть</h3>
+      <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
+        Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+        В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
+        используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без
+        заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в
+        новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и,
+        в более недавнее время, программы электронной вёрстки типа Aldus PageMaker,
+        в шаблонах которых используется Lorem Ipsum.</p>
+      <h4 class="mt-2">Интересные статьи</h4>
+      <img src="https://itproger.com/img/tasks/x1731654668.jpg.pagespeed.ic.yFZa_Nyh9r.webp" class="img-thumbnail">
+      <p>Создание парсера новостей с веб-сайта на Python</p>
+      <a href="https://itproger.com/tasks/sozdanie-parsera-novostey-s-veb-sayta-na-python" target="_blank">
+        <button class="btn btn-warning">просмотреть</button>
+      </a>
+{% endblock %}
+
+
