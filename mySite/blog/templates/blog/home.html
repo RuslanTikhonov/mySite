@@ -5,17 +5,23 @@
 {% endblock %}
 
 {% block content %}
-
-        {% for post in news %}
+  {% for post in news %}
     <div class="alert alert-light">
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.text }}</p>
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text }}</p>
+    <div class="row">
+      <div>
+        <img src="{{ post.avtor.profile.img.url }}" alt = "{{ post.avtor }}" class="user-images">
+      </div>
+      <div class="mt-2">
         <span class="test-muted"> Публикация: {{ post.date|date:"j F Y, время: H:i:s"}}</span>
             {% if post.autor %}
-                <p>Автор: {{ post.autor }}, </p>
+          <p><b>Автор:</b> {{ post.autor }}, </p>
             {% else %}
-                <p>Автор: <b>Admin</b> </p>
+                <p><b>Автор:</b> <b>Admin</b> </p>
             {% endif %}
+      </div>
+    </div>
     </div>
     {% endfor %}
 {% endblock %}
