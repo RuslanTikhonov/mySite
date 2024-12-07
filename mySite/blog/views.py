@@ -21,6 +21,7 @@ class ShowNewsView(ListView):
     template_name = "blog/home.html"
     context_object_name = "news"
     ordering = ["-date"]
+    paginate_by = 5
 
     def get_context_data(self, **kwards):
         ctx = super(ShowNewsView, self).get_context_data(**kwards)
@@ -72,9 +73,6 @@ class UpdateNewsView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def form_valid(self, form):
         form.instance.avtor = self.request.user
         return super().form_valid(form)
-
-
-
 
 
 class DeleteNewsView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):

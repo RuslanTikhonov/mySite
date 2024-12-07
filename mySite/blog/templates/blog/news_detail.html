@@ -7,7 +7,7 @@
 {% block content %}
     <div class="alert alert-light">
         <h1>{{ object.title }}</h1>
-        <p>{{ object.text }}</p>
+        <p>{{ object.text|safe }}</p>
     <div class="row">
       <div>
         <img src="{{ object.avtor.profile.img.url }}" alt = "{{ object.avtor }}" class="user-images">
