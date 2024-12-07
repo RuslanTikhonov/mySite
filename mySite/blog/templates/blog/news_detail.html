@@ -21,6 +21,11 @@
             {% endif %}
       </div>
     </div>
+    {% if object.avtor == user %}
+    <hr>
+    <a href="{% url 'news-update' object.id %}" class="btn btn-info">Обновить статью</a>
+    <a href="{% url 'news-delete' object.id %}" class="btn btn-danger">Удалить статью</a>
+    {% endif %}
     </div>
 {% endblock %}
 {% block aside_block %}
