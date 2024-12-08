@@ -15,11 +15,7 @@
       </div>
       <div class="mt-2">
         <span class="test-muted"> Публикация: {{ post.date|date:"d E Y, в: H:i"}}</span>
-            {% if post.autor %}
-          <p><b>Автор:</b> {{ post.autor }}, </p>
-            {% else %}
-                <p><b>Автор:</b> <b>Admin</b> </p>
-            {% endif %}
+          <p><b>Автор:</b> <a href="{% url 'user-news' post.avtor %}"> {{ post.avtor }}</a> </p>
       </div>
     </div>
         <a href="{% url 'news-detail' post.id %}" class="btn btn-outline-warning mt-3">Читать далее</a>
